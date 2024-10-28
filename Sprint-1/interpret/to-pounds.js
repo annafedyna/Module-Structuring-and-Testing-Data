@@ -24,4 +24,13 @@ console.log(`£${pounds}.${pence}`);
 // Try and describe the purpose / rationale behind each step
 
 // To begin, we can start with
-// 1. const penceString = "399p": initialises a string variable with the value "399p"
+
+/* 
+
+1. const penceString = "399p": initialises a string variable with the value "399p"
+2. lines 3-6 remove the trailing 'p' from a string representing a price in pence.
+3. padStart(3, "0")-> checks the length of the string and adds leading zeros until the total length is at least 3 characters. 
+If the string is already three characters or longer, it remains unchanged.
+
+4. then same fuctions used to calculate pence 
+*/
