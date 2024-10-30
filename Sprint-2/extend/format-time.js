@@ -22,3 +22,32 @@ console.assert(
   currentOutput2 === targetOutput2,
   `current output: ${currentOutput2}, target output: ${targetOutput2}`
 );
+
+const currentOutput3 = formatAs12HourClock("12:00");
+const targetOutput3 = "12:00 am";
+console.assert(currentOutput3 === targetOutput3, `current output: ${currentOutput2}, target output: ${targetOutput2}`);
+
+
+
+const currentOutput7 = formatAs12HourClock("13:00");
+const targetOutput7 = "01:00 pm";
+console.assert(
+  currentOutput7 === targetOutput7,
+  `current output: ${currentOutput7}, target output: ${targetOutput7}`
+);
+
+
+const currentOutput8 = formatAs12HourClock("21:00");
+const targetOutput8 = "9:00 pm";
+console.assert(
+  currentOutput8 === targetOutput8,
+  `current output: ${currentOutput8}, target output: ${targetOutput8}`
+);
+
+
+const currentOutput9 = formatAs12HourClock("25:15");
+const targetOutput9 = "undefined";
+console.assert(
+  currentOutput9 === targetOutput9,
+  `current output: ${currentOutput9}, target output: ${targetOutput9}`
+);
