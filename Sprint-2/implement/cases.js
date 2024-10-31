@@ -13,3 +13,11 @@
 
 // You will need to come up with an appropriate name for the function
 // Use the string documentation to help you find a solution
+
+function upperSnakeCase(str){
+    str = str.split(' ')
+    str.forEach((word, i, str) => str[i] = str[i].toUpperCase())
+    return str.join('_')
+}
+
+console.log(upperSnakeCase('hello there'));
