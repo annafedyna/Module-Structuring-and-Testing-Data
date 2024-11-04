@@ -1,6 +1,31 @@
 // You wil need to implement a function isProperFraction
 // You need to write assertions for your function to check it works in different cases
 
+function isProperFraction(numerator, denominator) {
+  if (
+    typeof numerator !== "number" ||
+    typeof denominator !== "number" ||
+    isNaN(numerator) ||
+    isNaN(denominator)
+  ) {
+    return "Wrong input";
+  } else {
+    if (denominator === 0) {
+      return "Error";
+    } else if (denominator == numerator) {
+      return false;
+    } else {
+      return Math.abs(numerator) < Math.abs(denominator) ? true : false;
+    }
+  }
+}
+
+console.assert(isProperFraction(2, 3) === true, "test1");
+console.assert(isProperFraction(-2, 3) === true, "test2");
+console.assert(isProperFraction(-2, 0) === "Error", "test3");
+console.assert(isProperFraction(-5, 3) === false, "test4");
+console.assert(isProperFraction(3, 3) === false, "test5");
+
 // Terms:
 // Fractions: https://www.bbc.co.uk/bitesize/topics/zt9n6g8/articles/zjxpp4j
 // Written here like this: 1/2 == Numerator/Denominator

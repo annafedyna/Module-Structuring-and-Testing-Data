@@ -2,8 +2,30 @@
 
 // You will need to implement a function getCardValue
 
-// You need to write assertions for your function to check it works in different cases
+function getCardValue(card) {
+  if (card.length < 2 && card.length > 3) {
+    return "Enter proper input";
+  } else if (card.length === 2) {
+    let rank = card[0];
+    if (!isNaN(+rank) && +rank >= 2 && +rank <= 9) {
+      return 5;
+    } else if (rank === "J" || rank === "Q" || rank === "K") {
+      return 10;
+    } else if (rank === "A") {
+      return 11;
+    } else {
+      return "Invalid card rank.";
+    }
+  } else {
+    return 10;
+  }
+}
 
+// You need to write assertions for your function to check it works in different cases
+console.assert(getCardValue("A♠") === 11, "1");
+console.assert(getCardValue("K♠") === 10, "2");
+console.assert(getCardValue("7♠") === 5, "3");
+console.log(getCardValue("10♠") === 10, "4");
 // Acceptance criteria:
 
 // Given a card string in the format "A♠" (representing a card in blackjack - the last character will always be an emoji for a suit, and all characters before will be a number 2-10, or one letter of J, Q, K, A),

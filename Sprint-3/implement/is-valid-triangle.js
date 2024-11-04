@@ -1,4 +1,39 @@
 // Implement a function isValidTriangle
+function isValidTriangle(a, b, c) {
+  if (
+    typeof a !== "number" ||
+    typeof b !== "number" ||
+    typeof c !== "number" ||
+    isNaN(a) ||
+    isNaN(b) ||
+    isNaN(c)
+  ) {
+    return "Enter valid input";
+  } else if (a <= 0 || b <= 0 || c <= 0) {
+    return "Enter valid positive numbers for the sides of the triangle";
+  } else {
+    if (a + b > c && b + c > a && a + c > b) {
+      return "This is a valid triangle";
+    } else {
+      return "This is not a valid triangle";
+    }
+  }
+}
+
+console.assert(
+  isValidTriangle(1, 2, 3) === "This is not a valid triangle",
+  "Not valid"
+);
+console.assert(
+  isValidTriangle(-1, 3, 4) ===
+    "Enter valid positive numbers for the sides of the triangle",
+  "Negative sides"
+);
+console.assert(
+  isValidTriangle(3, 3, 3) === "This is a valid triangle",
+  "Valid"
+);
+console.assert(isValidTriangle(3, 3) === "Enter valid input", "Invalid input");
 // Terms
 // the Triangle Inequality says: the sum of any two sides is always greater than the third side.
 // practical examples:
