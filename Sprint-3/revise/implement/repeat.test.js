@@ -1,5 +1,24 @@
 // Implement a function repeat
 
+function repeat(str, count) {
+    if (count < 0 || typeof count !== 'number') {
+        return 'Error'
+    } else if (count === 0 ) {
+        return ''
+    } else {
+        let res = ''
+        for (let i = 0; i < count; i++){
+            res += str
+        }
+        return res
+    }
+}
+
+test("Repeat the str count times", function () {
+  expect(repeat('hello', 0)).toEqual('');
+  expect(repeat('hello', 2)).toEqual('hellohello');
+  expect(repeat('hello', -5)).toEqual('Error');
+});
 // Given a target string str and a positive integer count,
 // When the repeat function is called with these inputs,
 // Then it should:
